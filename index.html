@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,8 @@
     >
       <!-- home section -->
       <section
-        class="home items-center min-h-screen flex flex-col justify-center gap-20 hidden"
+        id="home"
+        class="home items-center min-h-screen flex flex-col justify-center gap-20"
       >
         <h1 class="text-7xl font-bold text-white text-center">
           ALPAHBET CLASH
@@ -31,67 +32,103 @@
         <p class="text-white font-semibold text-lg">
           Unleash Your Keyboard Kung Fu:Press "Enter" to Play
         </p>
-        <button class="btn bg-white text-black font-bold">Play Now</button>
+        <button
+          id="playnow"
+          onclick="play()"
+          class="btn bg-white text-black font-bold"
+        >
+          Play Now
+        </button>
       </section>
 
       <!-- home sec ends -->
 
       <!-- keyboard section starts -->
       <section
-        class="keyboard flex flex-col justify-center items-center gap-20 min-h-screen"
+        id="play"
+        class="keyboard flex flex-col justify-center items-center gap-20 min-h-screen hidden"
       >
         <!-- artboard or screen -->
         <div class="artboeard">
           <div
-            class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-black bg-white bg-opacity-70"
+            class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-black bg-white bg-opacity-70 flex items-center gap-6 flex-col"
           >
-            1024×320
+            <p class="text-white bg-gray-800 p-2 rounded-xl">
+              Dont watach keyboard while playing
+            </p>
+            <h1
+              id="currentAlphabet"
+              class="uppercase text-black font-extrabold text-9xl"
+            >
+              Y
+            </h1>
           </div>
         </div>
         <!-- keys -->
         <div class="keys">
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">q</kbd>
-            <kbd class="kbd">w</kbd>
-            <kbd class="kbd">e</kbd>
-            <kbd class="kbd">r</kbd>
-            <kbd class="kbd">t</kbd>
-            <kbd class="kbd">y</kbd>
-            <kbd class="kbd">u</kbd>
-            <kbd class="kbd">i</kbd>
-            <kbd class="kbd">o</kbd>
-            <kbd class="kbd">p</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
           </div>
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">a</kbd>
-            <kbd class="kbd">s</kbd>
-            <kbd class="kbd">d</kbd>
-            <kbd class="kbd">f</kbd>
-            <kbd class="kbd">g</kbd>
-            <kbd class="kbd">h</kbd>
-            <kbd class="kbd">j</kbd>
-            <kbd class="kbd">k</kbd>
-            <kbd class="kbd">l</kbd>
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
           </div>
           <div class="flex justify-center gap-1 my-1 w-full">
-            <kbd class="kbd">z</kbd>
-            <kbd class="kbd">x</kbd>
-            <kbd class="kbd">c</kbd>
-            <kbd class="kbd">v</kbd>
-            <kbd class="kbd">b</kbd>
-            <kbd class="kbd">n</kbd>
-            <kbd class="kbd">m</kbd>
-            <kbd class="kbd">/</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="/" class="kbd">/</kbd>
           </div>
         </div>
         <!-- button -->
         <div class="button flex justify-between w-[1100px]">
-          <button class="btn rounded-md block">life <span>1</span></button>
-          <button class="btn rounded-md block">Score <span>1</span></button>
+          <button class="btn rounded-md block">
+            life <span id="life">5</span>
+          </button>
+          <button class="btn rounded-md block">
+            Score <span id="update-score">1</span>
+          </button>
         </div>
       </section>
       <!-- keyboard section starts ends -->
+
+      <!-- section of score board -->
+      <section
+        id="score"
+        class="score items-center min-h-screen flex flex-col justify-center gap-20 hidden"
+      >
+        <div
+          class="bg-cyan-200 w-[300px] h-[200px] items-center flex flex-col justify-center gap-20"
+        >
+          <div>
+            <h1>Score: <span id="showscore">0</span></h1>
+          </div>
+          <button class="btn">Play Again</button>
+        </div>
+      </section>
+      <!-- section of score board ends -->
     </main>
+    <script src="utility.js"></script>
 
     <script src="index.js"></script>
   </body>
